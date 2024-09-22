@@ -5,18 +5,19 @@
   "projection": {"type": "equalEarth"},
   "layer": [
     {
+
       "data": {
-        "url": "ne_110m_ocean.json",  
-        "format": {"type": "topojson", "feature": "ne_110m_ocean"}
+        "url": "ne_10m_ocean.json",  
+        "format": {"type": "topojson", "feature": "ne_10m_ocean"}
       },
-      "mark": {"type": "geoshape", "fill": "#87CEEB"} 
+      "mark": {"type": "geoshape", "fill": "#87CEEB"}
     },
     {
       "data": {
         "url": "country_grat_topo.json",
         "format": {"type": "topojson", "feature": "ne_10m_admin_0_countries"}
       },
-      "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "darkgrey"}
+      "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "#313132"}
     },
     {
       "data": {
