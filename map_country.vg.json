@@ -42,7 +42,8 @@
         "color": {
           "field": "income",
           "type": "quantitative",
-          "title": "Income",
+          "title": "Average Income (USD)",
+          "fontSize" : 15,
           "scale": {
             "type": "threshold",
             "domain": [1000, 10000, 30000, 60000, 120000, 180000],
