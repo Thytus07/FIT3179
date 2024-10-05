@@ -7,22 +7,22 @@
     {
 
       "data": {
-        "url": "ne_50m_ocean.json",  
-        "format": {"type": "topojson", "feature": "ne_50m_ocean"}
+        "url": "ne_110m_ocean.json",  
+        "format": {"type": "topojson", "feature": "ne_110m_ocean"}
       },
       "mark": {"type": "geoshape", "fill": "#87CEEB"}
     },
     {
       "data": {
-        "url": "ne_50m_land.json",
-        "format": {"type": "topojson", "feature": "ne_50m_land"}
+        "url": "ne_110m_land.json",
+        "format": {"type": "topojson", "feature": "ne_110m_land"}
       },
       "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "#313132"}
     },
     {
       "data": {
-        "url": "ne_50m_land.json",
-        "format": {"type": "topojson", "feature": "ne_50m_land"}
+        "url": "ne_110m_land.json",
+        "format": {"type": "topojson", "feature": "ne_110m_land"}
       },
       "transform": [
         {
