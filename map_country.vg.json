@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 900,
+  "height": 700,
   "projection": {"type": "equalEarth"},
   "params": [
     {
@@ -30,13 +30,19 @@
         "url": "ne_50m_admin_0_countries.json",
         "format": {"type": "topojson", "feature": "ne_50m_admin_0_countries"}
       },
-      "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "#313132"}
+      "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "#313132"},
+      "encoding": {
+        "tooltip":[
+          {"field": "properties.NAME", "type": "nominal", "title": "Data is not available for ","format":""}
+        ]
+      }
     },
     {
       "data": {
         "url": "ne_50m_admin_0_countries.json",
         "format": {"type": "topojson", "feature": "ne_50m_admin_0_countries"}
       },
+      
       "transform": [
         {
           "lookup": "properties.NAME",
