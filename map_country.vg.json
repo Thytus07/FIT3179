@@ -3,6 +3,19 @@
   "width": "container",
   "height": 900,
   "projection": {"type": "equalEarth"},
+  "params": [
+    {
+    "name": "Income_Above",
+    "value": 0,
+    "bind": {
+    "input": "range",
+    "min": 0,
+    "max": 110000,
+    "step": 100,
+    "name": "Minimum Income: "
+    }
+    }
+  ],
   "layer": [
     {
 
@@ -34,6 +47,7 @@
             },
             "key": "Country",
             "fields": ["income"]
+
           }
         }
       ],
@@ -45,7 +59,7 @@
           "title": "Average Income (USD)",
           "scale": {
             "type": "threshold",
-            "domain": [1000, 10000, 30000, 60000, 120000, 180000],
+            "domain": [1000, 10000, 30000, 50000, 70000, 95000],
             "range": ["#ffcccc", "#ff9999", "#ff6666", "#ff3333", "#cc0000", "#660000"]
           },
           "legend": {
@@ -55,6 +69,10 @@
             "symbolSize": 100,         
             "symbolStrokeWidth": 2,         
             "padding": 10           
+        },
+        "condition":{
+          "test":"datum.income < Income_Above",
+          "value":"lightgrey"
         }
         },
         "tooltip": [
