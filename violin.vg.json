@@ -1,0 +1,87 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A population pyramid showing migration in and out of Australia across quarters, ensuring negative values for 'out' status.",
+    "data": { "url": "aus_imm_in_out.csv" },
+    "transform": [
+      {
+        "calculate": "datum.status_num == 2 ? -datum.people : datum.people", 
+        "as": "signed_people"
+      }
+    ],
+    "vconcat" : [{
+      "width": 800,
+      "height": 300,
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "year_quarter",
+          "scale": {"domain": {"param": "brush"}},
+          "axis": {
+            "title": "Year and Quarter",
+            "labelAngle": 0,
+            "labelOverlap": "parity",
+            "tickCount": 10
+          },
+          "sort": "ascending"
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "signed_people",
+          "title": "Population",
+          "axis": {"format": "s"}
+        },
+        "color": {
+          "field": "status",
+          "scale": {"range": ["lightgreen", "orange"]},
+          "legend": {"orient": "right", "title": null}
+        },
+        "tooltip":[
+        {"field": "year", "type": "nominal", "title": "Year "},
+        {"field": "quarter", "type": "nominal", "title": "Quarter "},
+        {"field": "people", "type": "quantitative", "title": "People Immigrating "},
+        {"field": "status", "type": "nominal", "title": "Status "}
+      ]
+      }
+    },
+    {
+      "width": 800,
+      "height": 100,
+      "mark": "bar",
+      "params": [
+      {"name": "brush", "select": {"type": "interval",
+      "encodings": ["x"]}}
+      ],
+      "encoding": {
+        "x": {
+          "field": "year_quarter",
+          
+          "axis": {
+            "title": "Year and Quarter",
+            "labelAngle": 0,
+            "labelOverlap": "parity",
+            "tickCount": 10
+          },
+          "sort": "ascending"
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "signed_people",
+          "title": "Population",
+          "axis": {"format": "s"}
+        },
+        "color": {
+          "field": "status",
+          "scale": {"range": ["#ca8861", "#675193"]},
+          "legend": {"orient": "top", "title": null}
+        },
+        "tooltip":[
+        {"field": "year", "type": "nominal", "title": "Year "},
+        {"field": "quarter", "type": "nominal", "title": "Quarter "},
+        {"field": "people", "type": "quantitative", "title": "People Immigrating "},
+        {"field": "status", "type": "nominal", "title": "Status "}
+      ]
+      }
+    }
+  ]
+  }
+  
