@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-
-            h1 {text-align: center;}
-          </style>
-        <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-        <script src="map_country.js"></script>
-        <title>Annual Income in USD</title>
-    </head>
-    <body>
-        <h1>Average Annual Income in 2022 (USD)</h1>
-        <div id="map">
-        </div>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        h1 { text-align: center; }
+        #map,#violin {
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <script src="chart.js"></script>  <!-- Include your external JavaScript file -->
+    <title>Annual Income and Immigration Data</title>
+</head>
+<body>
+    <h1>Average Annual Income in USD 2022</h1>
+    
+    <div id="map"></div>
+    <div id="violin"></div>
+</body>
 </html>
