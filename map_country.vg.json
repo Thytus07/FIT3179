@@ -1,28 +1,28 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 1700,
+  "width": 1701,
   "height": 900,
   "projection": {"type": "equalEarth"},
   "layer": [
     {
 
       "data": {
-        "url": "ne_50m_ocean.json",  
-        "format": {"type": "topojson", "feature": "ne_50m_ocean"}
+        "url": "ne_110m_ocean.json",  
+        "format": {"type": "topojson", "feature": "ne_110m_ocean"}
       },
       "mark": {"type": "geoshape", "fill": "#87CEEB"}
     },
     {
       "data": {
-        "url": "ne_50m_land.json",
-        "format": {"type": "topojson", "feature": "ne_50m_land"}
+        "url": "ne_110m_land.json",
+        "format": {"type": "topojson", "feature": "ne_110m_land"}
       },
       "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "#313132"}
     },
     {
       "data": {
-        "url": "ne_50m_land.json",
-        "format": {"type": "topojson", "feature": "ne_50m_land"}
+        "url": "ne_110m_land.json",
+        "format": {"type": "topojson", "feature": "ne_110m_land"}
       },
       "transform": [
         {
@@ -43,7 +43,6 @@
           "field": "income",
           "type": "quantitative",
           "title": "Average Income (USD)",
-          "fontSize" : 15,
           "scale": {
             "type": "threshold",
             "domain": [1000, 10000, 30000, 60000, 120000, 180000],
