@@ -261,7 +261,7 @@
       "encoding": {
         "longitude": {"field": "end_lon"},  
         "latitude": {"field": "end_lat"},   
-        "text": {"value": "Ireland with an "}      
+        "text": {"value": "Ireland with highest "}      
       },
       "data": {
         "values": [
